@@ -1,0 +1,26 @@
+.btc-logo-img {
+  display: block;
+  height: 64px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.btc-logo-img.compact {
+  height: 48px;
+  max-width: 160px;
+}
+
+.btc-logo-img.footer {
+  height: 72px;
+  max-width: 240px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 10px;
+}
+
+.btc-logo-img.preloader {
+  height: auto;
+  width: min(280px, 70vw);
+  max-width: 280px;
+}

@@ -1,0 +1,30 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.preloader .btc-logo-img {
+  animation: logoPulse 1.2s ease-in-out infinite;
+}
+
+.preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.85;
+  }
+}

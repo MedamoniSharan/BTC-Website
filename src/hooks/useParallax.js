@@ -1,0 +1,42 @@
+import { useEffect } from "react";
+
+export function useParallax() {
+  useEffect(() => {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (reduceMotion) return;
+
+    const nodes = Array.from(document.querySelectorAll("[data-parallax]"));
+    if (!nodes.length) return;
+
+    let ticking = false;
+
+    const update = () => {
+      const viewH = window.innerHeight;
+      nodes.forEach((el) => {
+        const speed = Number(el.dataset.parallax) || 0.2;
+        const rect = el.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const offset = (center - viewH / 2) * speed * -1;
+        el.style.setProperty("--parallax-y", `${offset.toFixed(2)}px`);
+      });
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+}

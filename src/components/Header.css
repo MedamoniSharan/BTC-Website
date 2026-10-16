@@ -1,0 +1,236 @@
+.topbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+  font-size: 13px;
+  color: var(--text-color);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.topbar-brand .btc-logo-img {
+  height: 44px;
+  max-width: 150px;
+}
+
+.topbar-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  flex: 1;
+  justify-content: center;
+}
+
+.topbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-color);
+}
+
+.topbar-item svg {
+  color: var(--theme);
+  flex-shrink: 0;
+}
+
+.topbar-item a:hover {
+  color: var(--theme);
+}
+
+.topbar-cta {
+  padding: 10px 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--white);
+  border-bottom-left-radius: 40px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 78px;
+}
+
+.logo .btc-logo-img {
+  height: 58px;
+  max-width: 200px;
+}
+
+.desktop-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.desktop-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--header);
+}
+
+.desktop-nav a:hover {
+  color: var(--theme);
+}
+
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  z-index: 20;
+}
+
+.dropdown a {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.dropdown a:hover {
+  background: var(--smoke);
+  color: var(--theme);
+}
+
+.header-cta {
+  padding: 12px 22px;
+  font-size: 12px;
+}
+
+.menu-toggle {
+  display: none;
+  color: var(--theme);
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(360px, 88vw);
+  height: 100vh;
+  background: var(--white);
+  z-index: 1200;
+  padding: 24px;
+  overflow-y: auto;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.12);
+  animation: drawerIn 0.28s ease;
+}
+
+@keyframes drawerIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 13, 29, 0.45);
+  z-index: 1100;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.drawer-header img {
+  height: 46px;
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.drawer-nav > li > a {
+  display: block;
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: var(--title-font);
+  color: var(--title-color);
+}
+
+.drawer-sub {
+  padding-left: 12px;
+  margin-bottom: 8px;
+}
+
+.drawer-sub a {
+  display: block;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+@media (max-width: 1100px) {
+  .topbar-info span,
+  .topbar-info a {
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 991px) {
+  .topbar {
+    display: none;
+  }
+
+  .desktop-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-header {
+    border-radius: 0 0 24px 24px;
+    margin: 12px 12px 0;
+    width: calc(100% - 24px);
+  }
+}
