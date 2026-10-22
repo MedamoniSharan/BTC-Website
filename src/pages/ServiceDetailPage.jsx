@@ -235,7 +235,7 @@ export default function ServiceDetailPage() {
             </div>
           </aside>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
