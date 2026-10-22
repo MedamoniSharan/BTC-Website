@@ -6,13 +6,13 @@ import {
   Phone,
   Clock,
   Send,
-  MessageCircle,
   CheckCircle2,
   ShieldCheck,
   Building2,
 } from "lucide-react";
 import { company } from "../company";
 import { services } from "../data";
+import { WhatsAppIcon } from "../components/WhatsAppIcon";
 import "./ContactPage.css";
 
 export default function ContactPage() {
@@ -156,7 +156,7 @@ export default function ContactPage() {
                     onClick={handleWhatsAppSubmit}
                     className="theme-btn"
                   >
-                    <MessageCircle size={16} /> Open in WhatsApp
+                    <WhatsAppIcon size={17} /> Open in WhatsApp
                   </button>
                   <button
                     type="button"
@@ -249,7 +249,7 @@ export default function ContactPage() {
                     onClick={handleWhatsAppSubmit}
                     className="theme-btn whatsapp-action-btn"
                   >
-                    <MessageCircle size={16} /> Send via WhatsApp
+                    <WhatsAppIcon size={17} /> Send via WhatsApp
                   </button>
                 </div>
               </form>
@@ -261,7 +261,7 @@ export default function ContactPage() {
             {/* WhatsApp Priority Card */}
             <div className="whatsapp-priority-card">
               <div className="wa-card-header">
-                <MessageCircle size={24} />
+                <WhatsAppIcon size={26} />
                 <div>
                   <h4>WhatsApp Instant Connect</h4>
                   <span>Fastest Response Time</span>

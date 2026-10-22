@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
-  MessageCircle,
   Clock,
   ShieldCheck,
   Zap,
@@ -10,6 +9,7 @@ import {
 } from "lucide-react";
 import { services } from "../data";
 import { company } from "../company";
+import { WhatsAppIcon } from "../components/WhatsAppIcon";
 import "./GetQuotePage.css";
 
 const timelineOptions = [
@@ -271,7 +271,7 @@ ${formData.details || "Please provide consultation and cost estimates for our re
               {/* Action Buttons */}
               <div className="quote-actions">
                 <button type="submit" className="theme-btn quote-submit-btn">
-                  <MessageCircle size={18} /> Request Quote via WhatsApp
+                  <WhatsAppIcon size={18} /> Request Quote via WhatsApp
                 </button>
                 <a
                   href={company.whatsappHref}
@@ -290,7 +290,7 @@ ${formData.details || "Please provide consultation and cost estimates for our re
             {/* Direct WhatsApp Callout */}
             <div className="quote-wa-card">
               <div className="quote-wa-icon">
-                <MessageCircle size={32} />
+                <WhatsAppIcon size={32} />
               </div>
               <h3>Fast-Track on WhatsApp</h3>
               <p>

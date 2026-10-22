@@ -1,5 +1,6 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import "./CTA.css";
 
 export default function CTA() {
@@ -21,7 +22,7 @@ export default function CTA() {
               Speak with an Expert <ArrowRight size={16} />
             </Link>
             <Link to="/get-quote" className="theme-btn blue">
-              <MessageCircle size={16} /> Get A Quote via WhatsApp
+              <WhatsAppIcon size={17} /> Get A Quote via WhatsApp
             </Link>
           </div>
         </div>

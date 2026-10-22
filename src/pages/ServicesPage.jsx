@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, CheckCircle2, MessageCircle } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { services } from "../data";
+import { WhatsAppIcon } from "../components/WhatsAppIcon";
 import "./ServicesPage.css";
 
 const categories = [
@@ -42,7 +43,7 @@ export default function ServicesPage() {
           </p>
           <div className="page-hero-actions">
             <Link to="/get-quote" className="theme-btn">
-              <MessageCircle size={17} /> Get A Quote via WhatsApp
+              <WhatsAppIcon size={18} /> Get A Quote via WhatsApp
             </Link>
             <Link to="/contact" className="theme-btn blue">
               Speak with an Expert

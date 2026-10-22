@@ -1,7 +1,8 @@
-import { ArrowRight, Activity, MessageCircle } from "lucide-react";
+import { ArrowRight, Activity } from "lucide-react";
 import { Link } from "react-router-dom";
 import { heroFeatures } from "../data";
 import { company } from "../company";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import "./Hero.css";
 
 export default function Hero() {
@@ -50,7 +51,7 @@ export default function Hero() {
           </ul>
           <div className="hero-buttons">
             <Link to="/get-quote" className="theme-btn">
-              <MessageCircle size={17} /> Get A Quote via WhatsApp
+              <WhatsAppIcon size={18} /> Get A Quote via WhatsApp
             </Link>
             <Link to="/contact" className="theme-btn blue">
               Speak with an Expert <ArrowRight size={16} />

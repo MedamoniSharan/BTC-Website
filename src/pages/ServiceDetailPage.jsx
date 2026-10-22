@@ -7,12 +7,12 @@ import {
   Sparkles,
   Layers,
   ShieldCheck,
-  MessageCircle,
   Phone,
   Mail,
 } from "lucide-react";
 import { services } from "../data";
 import { company } from "../company";
+import { WhatsAppIcon } from "../components/WhatsAppIcon";
 import "./ServiceDetailPage.css";
 
 export default function ServiceDetailPage() {
@@ -56,7 +56,7 @@ export default function ServiceDetailPage() {
                   rel="noreferrer"
                   className="theme-btn"
                 >
-                  <MessageCircle size={17} /> Request WhatsApp Quote
+                  <WhatsAppIcon size={18} /> Request WhatsApp Quote
                 </a>
                 <Link to="/contact" className="theme-btn blue">
                   Speak with an Expert <ArrowRight size={16} />
@@ -162,7 +162,7 @@ export default function ServiceDetailPage() {
                     rel="noreferrer"
                     className="theme-btn"
                   >
-                    <MessageCircle size={16} /> Chat on WhatsApp Now
+                    <WhatsAppIcon size={17} /> Chat on WhatsApp Now
                   </a>
                   <Link
                     to={`/get-quote?service=${encodeURIComponent(service.title)}`}
@@ -187,7 +187,7 @@ export default function ServiceDetailPage() {
                 rel="noreferrer"
                 className="theme-btn w-full"
               >
-                <MessageCircle size={16} /> WhatsApp Quote
+                <WhatsAppIcon size={16} /> WhatsApp Quote
               </a>
               <div className="sidebar-timing">
                 <Clock size={14} />
