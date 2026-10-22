@@ -1,4 +1,5 @@
-import { MapPin, Mail, Phone, ArrowRight, Clock } from "lucide-react";
+import { Clock, ArrowRight, MessageSquareCode } from "lucide-react";
+import { Link } from "react-router-dom";
 import { company } from "../company";
 import { services } from "../data";
 import Logo from "./Logo";
@@ -26,24 +27,37 @@ export default function Footer() {
   const footerServices = services.slice(0, 8);
 
   return (
-    <footer className="site-footer" id="contact">
+    <footer className="site-footer" id="contact-footer">
       <div className="footer-cta">
         <div className="container footer-cta-inner">
-          <div>
+          <div className="footer-cta-content">
+            <span className="footer-cta-badge">Transform Your Technology</span>
             <h3>Stay Connected With Modern Technology Services</h3>
-            <a href={company.emailHref} className="theme-btn">
-              Tech Support Consultation <ArrowRight size={16} />
-            </a>
+            <p>
+              Partner with BTC Consultancy for custom software engineering, cloud migrations,
+              and dedicated talent pipelines.
+            </p>
+            <div className="footer-cta-buttons">
+              <Link to="/get-quote" className="theme-btn">
+                Get A Quote on WhatsApp <ArrowRight size={16} />
+              </Link>
+              <Link to="/contact" className="theme-btn blue">
+                Speak with an Expert
+              </Link>
+            </div>
           </div>
-          <img src="/images/home_contact2.png" alt="" />
+          <div className="footer-cta-graphic">
+            <img src="/images/home_contact2.png" alt="BTC Consultancy" />
+          </div>
         </div>
       </div>
 
       <div className="footer-main">
         <div className="container footer-grid">
+          {/* Brand info */}
           <div className="footer-brand">
             <Logo className="footer" />
-            <p>
+            <p className="footer-tagline-text">
               {company.tagline}. {company.capabilityStatement}
             </p>
             <div className="social-links">
@@ -74,78 +88,92 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
             <h3>Quick Links</h3>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#careers">Careers</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+            <ul className="footer-nav-list">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/#about">About Us</Link>
+              </li>
+              <li>
+                <Link to="/services">All Services</Link>
+              </li>
+              <li>
+                <Link to="/#delivery">Delivery Models</Link>
+              </li>
+              <li>
+                <Link to="/#careers">Careers & Talent</Link>
+              </li>
+              <li>
+                <Link to="/get-quote">Get A Quote</Link>
+              </li>
+              <li>
+                <Link to="/contact">Speak with Experts</Link>
+              </li>
             </ul>
           </div>
 
+          {/* Individual Service links */}
           <div>
-            <h3>Services</h3>
-            <ul>
+            <h3>Technology Services</h3>
+            <ul className="footer-nav-list">
               {footerServices.map((service) => (
-                <li key={service.title}>
-                  <a href="#services">{service.title}</a>
+                <li key={service.slug}>
+                  <Link to={`/services/${service.slug}`}>{service.title}</Link>
                 </li>
               ))}
+              <li>
+                <Link to="/services" className="footer-all-services-link">
+                  View All 12 Services →
+                </Link>
+              </li>
             </ul>
           </div>
 
-          <div>
-            <h3>Contact Us</h3>
-            <ul className="contact-list">
-              <li>
-                <MapPin size={16} />
-                <span>{company.address}</span>
-              </li>
-              <li>
-                <Mail size={16} />
-                <a href={company.emailHref}>{company.email}</a>
-              </li>
-              <li>
-                <Phone size={16} />
-                <a href={company.phoneHref}>{company.phone}</a>
-              </li>
-              <li>
-                <Clock size={16} />
-                <span>
-                  {company.hours}
-                  <br />
-                  {company.hoursNote}
-                </span>
-              </li>
-            </ul>
+          {/* Only Timing in Footer */}
+          <div className="footer-timing-col">
+            <h3>Working Hours</h3>
+            <div className="footer-timing-card">
+              <Clock size={22} className="footer-clock-icon" />
+              <div>
+                <span className="footer-timing-title">Business Operating Hours</span>
+                <p className="footer-hours-val">{company.hours}</p>
+                <span className="footer-hours-note">{company.hoursNote}</span>
+              </div>
+            </div>
 
-            <form
-              className="newsletter"
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-            >
-              <input
-                type="email"
-                placeholder="Your email address"
-                required
-                aria-label="Your email address"
-              />
-              <button type="submit" aria-label="Subscribe">
-                <ArrowRight size={18} />
-              </button>
-            </form>
+            <div className="footer-reach-box">
+              <div className="footer-reach-head">
+                <MessageSquareCode size={18} />
+                <span>Need Project Consultation?</span>
+              </div>
+              <p>Connect with our technical team in Hitech City, Hyderabad.</p>
+              <div className="footer-links-row">
+                <Link to="/contact" className="footer-reach-btn">
+                  Speak with an Expert
+                </Link>
+                <Link to="/get-quote" className="footer-reach-btn outline">
+                  Get A Quote
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <div className="container">
+        <div className="container footer-bottom-inner">
           <p>
-            © {new Date().getFullYear()} {company.name}. All rights reserved.
+            © {new Date().getFullYear()} {company.name}. All rights reserved. Headquartered in {company.city}.
           </p>
+          <div className="footer-bottom-links">
+            <Link to="/services">Services</Link>
+            <Link to="/get-quote">WhatsApp Quotes</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
         </div>
       </div>
     </footer>

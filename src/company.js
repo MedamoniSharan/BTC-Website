@@ -2,11 +2,16 @@ export const company = {
   name: "BTC Consultancy Private Limited",
   shortName: "BTC Consultancy",
   tagline: "Technology | Talent | Tomorrow",
-  phone: "9989237771",
+  phone: "+91 9989237771",
+  phoneRaw: "9989237771",
   phoneHref: "tel:+919989237771",
+  whatsappNumber: "919989237771",
+  whatsappHref:
+    "https://wa.me/919989237771?text=Hi%20BTC%20Consultancy,%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services.",
   email: "btc.consultancypvtltd@gmail.com",
   emailHref: "mailto:btc.consultancypvtltd@gmail.com",
-  address: "Madhapur, Hyderabad, 500081",
+  address: "Hitech City, Hyderabad, 500081",
+  city: "Hitech City, Hyderabad",
   hours: "Mon–Friday, 9:00 am – 6:00 pm",
   hoursNote: "Saturday & Sunday Off",
   social: {
@@ -21,14 +26,14 @@ export const company = {
   mission:
     "To deliver software and IT services through disciplined engineering, continuous learning, transparent communication and measurable delivery outcomes, while developing capabilities across modern technology ecosystems.",
   overview:
-    "BTC Consultancy Private Limited is a technology consulting, software development and IT services company focused on delivering practical digital solutions while building a strong talent pipeline. The business combines software engineering, cloud, data, artificial intelligence, enterprise applications, user experience and technology talent services under one operating brand.",
+    "BTC Consultancy Private Limited is a technology consulting, software development and IT services company based in Hitech City, Hyderabad, focused on delivering practical digital solutions while building a strong talent pipeline. The business combines software engineering, cloud, data, artificial intelligence, enterprise applications, user experience and technology talent services under one operating brand.",
   about: [
     "BTC Consultancy Private Limited is conceived as a technology consulting, software development and IT services company focused on delivering practical digital solutions while building a strong talent pipeline.",
     "The proposed business combines software engineering, cloud, data, artificial intelligence, enterprise applications, user experience and technology talent services under one operating brand.",
     "The company is intended to serve businesses, institutions, startups and other organizations that require technology implementation, modernization, application development, testing, digital transformation support or access to skilled technology professionals.",
   ],
   capabilityStatement:
-    "BTC Consultancy Private Limited proposes to operate as a technology-focused professional services organization with capabilities spanning software development, technology consulting, enterprise applications, cloud and DevOps, ServiceNow, Salesforce DevOps, data, AI/ML, UI/UX, quality engineering and technology talent services.",
+    "BTC Consultancy Private Limited operates as a technology-focused professional services organization with capabilities spanning software development, technology consulting, enterprise applications, cloud and DevOps, ServiceNow, Salesforce DevOps, data, AI/ML, UI/UX, quality engineering and technology talent services.",
   integrationApproach:
     "Our capability model is cross-functional. A digital application can combine React or Angular at the front end, Java / .NET / Node.js / Python at the service layer, SQL for structured data, AWS or Azure for infrastructure, ServiceNow and Salesforce for enterprise workflows and CRM/ITSM capabilities, automated testing for quality, and Data Science or AI/ML where analytical or intelligent capabilities are required.",
 };

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { services, serviceGrid } from "../data";
 import "./Services.css";
@@ -46,15 +47,16 @@ export default function Services() {
                 style={{ "--slide": index }}
               >
                 {services.map((service) => (
-                  <article className="service-card" key={service.title}>
+                  <article className="service-card" key={service.slug}>
                     <div className="service-icon">
                       <img src={service.icon} alt="" />
                     </div>
+                    <span className="service-card-tag">{service.category}</span>
                     <h3>{service.title}</h3>
                     <p>{service.desc}</p>
-                    <a href="#contact">
+                    <Link to={`/services/${service.slug}`} className="service-link">
                       Discover More <ArrowUpRight size={16} />
-                    </a>
+                    </Link>
                   </article>
                 ))}
               </div>
@@ -66,7 +68,7 @@ export default function Services() {
       <section className="service-grid-section section-space">
         <div className="container">
           <div className="services-intro center" data-reveal>
-            <span className="section-label">Our Services</span>
+            <span className="section-label">Our Capabilities</span>
             <h2 className="section-title">Complete IT Capabilities Under One Roof</h2>
             <p className="section-text">
               From engineering and platforms to talent and training, partner with
@@ -78,24 +80,24 @@ export default function Services() {
             {serviceGrid.map((item, i) => (
               <article
                 className="grid-card"
-                key={item.title}
+                key={item.slug}
                 data-reveal
                 data-delay={String((i % 5) + 1)}
               >
                 <span className="grid-num">{String(i + 1).padStart(2, "0")}</span>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
-                <a href="#contact">
+                <Link to={`/services/${item.slug}`} className="grid-link">
                   Read more <ArrowRight size={14} />
-                </a>
+                </Link>
               </article>
             ))}
           </div>
 
           <div className="view-all">
-            <a href="#contact" className="theme-btn blue">
-              View All
-            </a>
+            <Link to="/services" className="theme-btn blue">
+              View All 12 Dedicated Services
+            </Link>
           </div>
         </div>
       </section>

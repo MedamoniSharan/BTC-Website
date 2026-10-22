@@ -82,7 +82,20 @@
   background: rgba(0, 119, 192, 0.08);
   display: grid;
   place-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+}
+
+.service-card-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--theme);
+  background: rgba(0, 174, 239, 0.1);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
 }
 
 .service-icon img {

@@ -1,16 +1,20 @@
 import { useEffect } from "react";
 
-export function useParallax() {
+export function useParallax(triggerKey = "") {
   useEffect(() => {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (reduceMotion) return;
 
-    const nodes = Array.from(document.querySelectorAll("[data-parallax]"));
-    if (!nodes.length) return;
-
     let ticking = false;
+    let nodes = [];
+
+    const setup = () => {
+      nodes = Array.from(document.querySelectorAll("[data-parallax]"));
+      if (!nodes.length) return;
+      update();
+    };
 
     const update = () => {
       const viewH = window.innerHeight;
@@ -31,12 +35,14 @@ export function useParallax() {
       }
     };
 
-    update();
+    const timeout = setTimeout(setup, 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+
     return () => {
+      clearTimeout(timeout);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, []);
+  }, [triggerKey]);
 }

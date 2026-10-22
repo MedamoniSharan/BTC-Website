@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function useReveal(rootSelector = "main") {
+export function useReveal(rootSelector = "body", triggerKey = "") {
   useEffect(() => {
     let observer;
     let frame;
@@ -40,8 +40,8 @@ export function useReveal(rootSelector = "main") {
           });
         },
         {
-          threshold: 0.14,
-          rootMargin: "0px 0px -6% 0px",
+          threshold: 0.1,
+          rootMargin: "0px 0px -4% 0px",
         }
       );
 
@@ -54,5 +54,5 @@ export function useReveal(rootSelector = "main") {
       if (frame) cancelAnimationFrame(frame);
       if (observer) observer.disconnect();
     };
-  }, [rootSelector]);
+  }, [rootSelector, triggerKey]);
 }
