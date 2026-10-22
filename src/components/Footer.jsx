@@ -169,6 +169,23 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} {company.name}. All rights reserved. Headquartered in {company.city}.
           </p>
+          <div className="footer-developer">
+            <span>Developed by</span>
+            <a
+              href="https://staffarc.com"
+              target="_blank"
+              rel="noreferrer"
+              className="developer-tag"
+              title="Developed by Staffarc"
+            >
+              <img
+                src="/images/staffarc-logo.png"
+                alt="Staffarc logo"
+                className="developer-logo"
+              />
+              <span className="developer-name">staffarc</span>
+            </a>
+          </div>
           <div className="footer-bottom-links">
             <Link to="/services">Services</Link>
             <Link to="/get-quote">WhatsApp Quotes</Link>
